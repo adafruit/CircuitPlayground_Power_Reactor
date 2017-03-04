@@ -11,7 +11,7 @@
 
 
 // Reactor configuration:
-#define BRIGHTNESS            100   // NeoPixel brightness
+#define BRIGHTNESS            255   // NeoPixel brightness
 #define COLOR_PERIOD_S        15    // Number of seconds before changing to random color.
 #define ANIMATION_PERIOD_S    30    // Number of seconds before changing to random animation.
 
@@ -86,7 +86,7 @@ uint32_t elapsedColorMS = 0;
 
 void setup() {
   // Initialize random number generator with light sensor value.
-  randomSeed(analogRead(0));
+  randomSeed(analogRead(A5));
   // Initialize other parts of board (serial output, circuit playground library).
   Serial.begin(115200);
   CircuitPlayground.begin();

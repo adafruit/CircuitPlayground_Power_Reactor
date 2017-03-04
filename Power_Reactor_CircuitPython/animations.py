@@ -25,9 +25,9 @@ class Chase:
 
     def update(self):
         phase_scale = 2.0*math.pi/pixels.n
-        sin_scale = 2.0*math.pi*self.frequency
+        sin_intermediate = 2.0*math.pi*self.frequency*clock.currentS
         for i in range(pixels.n):
-            x = math.sin(sin_scale*clock.currentS + (phase_scale*i))
+            x = math.sin(sin_intermediate + (phase_scale*i))
             pixels.set_pixel_rgb(i, color.interpolate_component(0, x, -1.0, 1.0),
                                     color.interpolate_component(1, x, -1.0, 1.0),
                                     color.interpolate_component(2, x, -1.0, 1.0))
