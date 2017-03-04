@@ -16,7 +16,6 @@ import reactor
 
 
 # Reactor configuration:
-BRIGHTNESS           = 100   # NeoPixel brightness
 COLOR_PERIOD_S       = 15    # Number of seconds before changing to random color.
 ANIMATION_PERIOD_S   = 30    # Number of seconds before changing to random animation.
 
