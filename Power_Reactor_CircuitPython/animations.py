@@ -1,5 +1,5 @@
 import math
-import urandom
+import random
 
 
 # Globals that all animations can use:
@@ -35,7 +35,7 @@ class Chase:
 class Sparkle:
 
     def __init__(self, n, min_freq=0.5, max_freq=1.5):
-        self.frequencies = list(map(lambda x: urandom.uniform(min_freq, max_freq),
+        self.frequencies = list(map(lambda x: random.uniform(min_freq, max_freq),
                                     range(n)))
 
     def update(self):

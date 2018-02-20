@@ -2,10 +2,10 @@
 # Author: Tony DiCola
 # License: MIT License (https://opensource.org/licenses/MIT)
 import time
-import urandom
+import random
 
 import board
-import nativeio
+import analogio
 
 import circuitplayground
 import neopixel
@@ -44,8 +44,8 @@ elapsedColor = 0.0
 
 # Setup code:
 # Initialize random number generator with light sensor value:
-with nativeio.AnalogIn(board.LIGHT) as light:
-    urandom.seed(light.value)
+with analogio.AnalogIn(board.LIGHT) as light:
+    random.seed(light.value)
 # Clear all the pixels.
 pixels.fill((0,0,0))
 pixels.write()
@@ -99,10 +99,10 @@ while True:
 
     # Change to random color after specified period.
     if elapsedColor >= COLOR_PERIOD_S:
-        currentColor = urandom.randint(0, len(colors.colors)-1)
+        currentColor = random.randint(0, len(colors.colors)-1)
         elapsedColor = 0.0
 
     # Change to random animation after specified period.
     if elapsedAnimation >= ANIMATION_PERIOD_S:
-        currentAnimation = urandom.randint(0, len(_animations)-1)
+        currentAnimation = random.randint(0, len(_animations)-1)
         elapsedAnimation = 0.0
